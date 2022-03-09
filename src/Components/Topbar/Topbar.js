@@ -6,7 +6,7 @@ export default function Topbar() {
     <>
       <div
         className={
-          "w-screen h-10 absolute -top-8 hover:top-0 flex items-center z-50  justify-between transition-all " +
+          "w-screen h-8 absolute flex items-center z-50  justify-between " +
           classes.topbar
         }
       >
@@ -32,7 +32,7 @@ export default function Topbar() {
       </div>
       <div
         className={
-          "w-screen h-10 fixed -bottom-8 flex items-center z-50  justify-between hover:bottom-0 transition-all " +
+          "w-screen h-8 fixed bottom-0 flex items-center z-50  justify-between  " +
           classes.bottombar
         }
       >
