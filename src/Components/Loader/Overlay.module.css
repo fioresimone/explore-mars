@@ -1,0 +1,35 @@
+.wrapper {
+  width: 120px;
+  height: 120px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 4px solid rgb(167, 72, 8);
+  position: relative;
+}
+
+.planet {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: black;
+  border: 4px solid rgb(167, 72, 8);
+  animation-name: planet;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes planet {
+  from {
+    transform: rotate(0deg) translate(60px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(60px) rotate(360deg);
+  }
+}
