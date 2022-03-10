@@ -6,6 +6,9 @@ import {
   Cone,
   useProgress,
   Html,
+  Plane,
+  Sphere,
+  Torus,
 } from "@react-three/drei";
 import { TextureLoader, CubeTextureLoader } from "three";
 import { Stats } from "@react-three/drei/core/Stats";
@@ -13,18 +16,66 @@ import { Stats } from "@react-three/drei/core/Stats";
 import MoonColor from "./marsColor.jpg";
 import MoonNormal from "./marsNormal10.jpg";
 import MoonBump from "./marsBump10.jpg";
+/* import Opacity from "./../../Assets/opacity.png"; */
+import Opacity from "./../../Assets/op.jpeg";
 import Overlay from "../Loader/Overlay";
 
 export default function Mars() {
   function Moon() {
-    const [color, normal, bump] = useLoader(TextureLoader, [
+    const [color, normal, bump, opacity] = useLoader(TextureLoader, [
       MoonColor,
       MoonNormal,
       MoonBump,
+      Opacity,
     ]);
+
+    const point = useRef();
+    useFrame((state, delta) => {
+      const elapsed = state.clock.elapsedTime;
+
+      point.current.position.x = Math.cos(elapsed) * 24;
+      point.current.position.z = Math.sin(elapsed) * 24;
+      point.current.position.y = Math.sin(elapsed) * 4;
+    });
+
+    /* const ref = useRef();
+    useFrame((state, delta) => {
+      const elapsed = state.clock.elapsedTime;
+      ref.current.position.z = Math.sin(elapsed / 2) * 6;
+    }); */
 
     return (
       <>
+        {/* <Plane ref={ref} args={[20, 20, 36, 36]}>
+          <meshBasicMaterial
+            attach="material"
+            color="red"
+            wireframe
+            transparent
+            alphaMap={opacity}
+          />
+        </Plane> */}
+
+        <Sphere ref={point} args={[1, 36, 36]} scale={0.1}>
+          <meshBasicMaterial
+            attach="material"
+            color="orange"
+            transparent
+
+            /* opacity={0.1} */
+          />
+        </Sphere>
+
+        <Sphere args={[6, 32, 32]}>
+          <meshBasicMaterial
+            attach="material"
+            color="red"
+            transparent
+            wireframe
+            opacity={0.1}
+          />
+        </Sphere>
+
         <mesh position={[0, 0, 0]}>
           <sphereGeometry args={[5, 256, 256]} />
           <meshStandardMaterial
@@ -93,16 +144,16 @@ export default function Mars() {
         colorManagement={false}
       >
         <Suspense fallback={null}>
-          <ambientLight intensity={0.25} />
+          <ambientLight intensity={0.5} />
           {/* <ambientLight intensity={0.1} /> */}
           <Sun />
-          {/* <Stats /> */}
+          <Stats />
 
           {/* <axesHelper scale={15} /> */}
 
           <OrbitControls
             minDistance={10}
-            maxDistance={35}
+            maxDistance={120}
             enablePan={false}
             minPolarAngle={Math.PI / 2}
             maxPolarAngle={Math.PI / 2}
