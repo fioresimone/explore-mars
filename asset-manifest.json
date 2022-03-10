@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/explore-mars/static/css/main.d19d577e.css",
-    "main.js": "/explore-mars/static/js/main.2f09a898.js",
+    "main.js": "/explore-mars/static/js/main.80b5645b.js",
     "static/js/787.c9859983.chunk.js": "/explore-mars/static/js/787.c9859983.chunk.js",
     "static/media/marsColor.jpg": "/explore-mars/static/media/marsColor.c80a0cb27dd90e847664.jpg",
     "static/media/marsNormal10.jpg": "/explore-mars/static/media/marsNormal10.9da20d7b89db59632ea3.jpg",
@@ -19,11 +19,11 @@
     "static/media/op.jpeg": "/explore-mars/static/media/op.e52d0f85d6aaadc1c174.jpeg",
     "index.html": "/explore-mars/index.html",
     "main.d19d577e.css.map": "/explore-mars/static/css/main.d19d577e.css.map",
-    "main.2f09a898.js.map": "/explore-mars/static/js/main.2f09a898.js.map",
+    "main.80b5645b.js.map": "/explore-mars/static/js/main.80b5645b.js.map",
     "787.c9859983.chunk.js.map": "/explore-mars/static/js/787.c9859983.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d19d577e.css",
-    "static/js/main.2f09a898.js"
+    "static/js/main.80b5645b.js"
   ]
 }
