@@ -1,14 +1,15 @@
 :root {
-  --main: rgb(167, 72, 8);
-  --main-tr: rgba(167, 72, 8, 0.6);
+  --main: transparent;
+  --main-tr: rgb(197, 57, 53, 0.6);
+  --border: red;
 }
 
 .topbar {
   background: linear-gradient(
     to right,
-    var(--main) 15%,
+    var(--main) 10%,
     var(--main-tr),
-    var(--main) 85%
+    var(--main) 90%
   );
 }
 
@@ -22,8 +23,8 @@
   background: linear-gradient(
     90deg,
     transparent 77px,
-    orange 77px,
-    orange calc(100% - 77px),
+    var(--border) 77px,
+    var(--border) calc(100% - 77px),
     transparent calc(100% - 77px)
   );
 }
@@ -35,8 +36,16 @@
   width: 60px;
   height: 36px;
   background-color: var(--main);
-  border-bottom: 2px solid orange;
+  border-bottom: 2px solid white;
   z-index: -1;
+}
+
+.leftBlockTopShadow {
+  position: absolute;
+  bottom: -2px;
+  width: 95%;
+  height: 1px;
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
 }
 
 .leftBlockTop::after {
@@ -48,8 +57,8 @@
   height: 15px;
   background-color: rgb(255, 255, 255);
   transform: skew(-50deg);
-  box-shadow: 0 0 12px 0 rgb(255 255 255 / 100%), 0px 0px 5px 1px var(--main);
-  z-index: 9;
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
+  z-index: 90;
 }
 
 .leftBlockTop::before {
@@ -71,8 +80,17 @@
   width: 60px;
   height: 36px;
   background-color: var(--main);
-  border-bottom: 2px solid orange;
+  border-bottom: 2px solid white;
   z-index: -1;
+}
+
+.rightBlockTopShadow {
+  position: absolute;
+  bottom: -2px;
+  right: 0px;
+  width: 95%;
+  height: 1px;
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
 }
 
 .rightBlockTop::after {
@@ -84,7 +102,7 @@
   height: 15px;
   background-color: rgb(255, 255, 255);
   transform: skew(50deg);
-  box-shadow: 0 0 12px 0 rgb(255 255 255 / 100%), 0px 0px 5px 1px var(--main);
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
   z-index: 9;
 }
 
@@ -119,8 +137,8 @@
   background: linear-gradient(
     90deg,
     transparent 77px,
-    orange 77px,
-    orange calc(100% - 77px),
+    var(--border) 77px,
+    var(--border) calc(100% - 77px),
     transparent calc(100% - 77px)
   );
 }
@@ -132,8 +150,16 @@
   width: 60px;
   height: 36px;
   background-color: var(--main);
-  border-top: 2px solid orange;
+  border-top: 2px solid white;
   z-index: 99;
+}
+
+.leftBlockBottomShadow {
+  position: absolute;
+  top: -2px;
+  width: 95%;
+  height: 1px;
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
 }
 
 .leftBlockBottom::after {
@@ -145,7 +171,7 @@
   height: 15px;
   background-color: rgb(255, 255, 255);
   transform: skew(50deg);
-  box-shadow: 0 0 12px 0 rgb(255 255 255 / 100%), 0px 0px 5px 1px var(--main);
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
   z-index: 99;
 }
 
@@ -168,8 +194,17 @@
   width: 60px;
   height: 36px;
   background-color: var(--main);
-  border-top: 2px solid orange;
+  border-top: 2px solid white;
   z-index: 99;
+}
+
+.rightBlockBottomShadow {
+  position: absolute;
+  top: -2px;
+  right: 0px;
+  width: 95%;
+  height: 1px;
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
 }
 
 .rightBlockBottom::after {
@@ -181,7 +216,7 @@
   height: 15px;
   background-color: rgb(255, 255, 255);
   transform: skew(-50deg);
-  box-shadow: 0 0 12px 0 rgb(255 255 255 / 100%), 0px 0px 5px 1px var(--main);
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
   z-index: 999;
 }
 
