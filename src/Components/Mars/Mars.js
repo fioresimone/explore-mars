@@ -66,13 +66,13 @@ export default function Mars() {
           />
         </Sphere>
 
-        <Sphere args={[6, 32, 32]}>
+        <Sphere args={[12, 32, 32]}>
           <meshBasicMaterial
             attach="material"
             color="red"
             transparent
             wireframe
-            opacity={0.1}
+            opacity={0.05}
           />
         </Sphere>
 
@@ -144,7 +144,7 @@ export default function Mars() {
         colorManagement={false}
       >
         <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
+          <ambientLight intensity={0.15} />
           {/* <ambientLight intensity={0.1} /> */}
           <Sun />
           <Stats />
