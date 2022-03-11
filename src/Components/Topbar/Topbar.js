@@ -17,7 +17,7 @@ export default function Topbar() {
           <div className={classes.rightBlockTopShadow}></div>
         </div>
 
-        <Link to="/" className="text-xs">
+        {/* <Link to="/" className="text-xs">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -40,7 +40,7 @@ export default function Topbar() {
 
         <Link to="/" className="text-xs">
           home
-        </Link>
+        </Link> */}
       </div>
       <div
         className={
