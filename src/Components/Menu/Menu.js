@@ -6,7 +6,7 @@ export default function Menu() {
 
   return (
     <>
-      <div className="absolute bottom-0 w-screen z-50 flex justify-center">
+      <div className="fixed bottom-0 w-screen z-50 flex justify-center">
         <i
           className="fal fa-plus shadow-custom cursor-pointer  relative bottom-5 z-50"
           onClick={() => setOpen(!open)}
