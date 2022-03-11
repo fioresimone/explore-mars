@@ -17,7 +17,7 @@ import MoonColor from "./marsColor.jpg";
 import MoonNormal from "./marsNormal10.jpg";
 import MoonBump from "./marsBump10.jpg";
 /* import Opacity from "./../../Assets/opacity.png"; */
-import Opacity from "./../../Assets/op.jpeg";
+import Opacity from "./../../Assets/elevation.png";
 import Overlay from "../Loader/Overlay";
 
 export default function Mars() {
@@ -29,14 +29,14 @@ export default function Mars() {
       Opacity,
     ]);
 
-    const point = useRef();
+    /* const point = useRef();
     useFrame((state, delta) => {
       const elapsed = state.clock.elapsedTime;
 
       point.current.position.x = Math.cos(elapsed) * 24;
       point.current.position.z = Math.sin(elapsed) * 24;
       point.current.position.y = Math.sin(elapsed) * 4;
-    });
+    }); */
 
     /* const ref = useRef();
     useFrame((state, delta) => {
@@ -56,25 +56,21 @@ export default function Mars() {
           />
         </Plane> */}
 
-        <Sphere ref={point} args={[1, 36, 36]} scale={0.1}>
-          <meshBasicMaterial
-            attach="material"
-            color="orange"
-            transparent
+        {/*         <Sphere ref={point} args={[1, 36, 36]} scale={0.1}>
+          <meshBasicMaterial attach="material" color="orange" />
+        </Sphere> */}
 
-            /* opacity={0.1} */
-          />
-        </Sphere>
-
-        <Sphere args={[12, 32, 32]}>
+        {/* <Sphere args={[6, 128, 128]}>
           <meshBasicMaterial
             attach="material"
             color="red"
             transparent
             wireframe
-            opacity={0.05}
+            
+
+            opacity={0.11}
           />
-        </Sphere>
+        </Sphere> */}
 
         <mesh position={[0, 0, 0]}>
           <sphereGeometry args={[5, 256, 256]} />
@@ -154,8 +150,8 @@ export default function Mars() {
             minDistance={10}
             maxDistance={120}
             enablePan={false}
-            minPolarAngle={Math.PI / 2}
-            maxPolarAngle={Math.PI / 2}
+            /* minPolarAngle={Math.PI / 2}
+            maxPolarAngle={Math.PI / 2} */
           />
           <Moon />
         </Suspense>

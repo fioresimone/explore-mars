@@ -45,7 +45,7 @@ function Terrain({ wireframe }) {
       >
         <meshStandardMaterial
           attach="material"
-          color="#2771CC"
+          color="#c53934"
           wireframe={wireframe}
           map={color}
           displacementMap={height}
@@ -109,7 +109,7 @@ export default function Surface() {
 
   return (
     <>
-      <div className="absolute bottom-10 left-10 h-10 z-40">
+      <div className="absolute bottom-20 left-4 h-10 z-40">
         <div
           className="card-border flex px-2 items-center w-full h-8 md:h-10 text-xs mb-2 text-white"
           onClick={() => setWireframe(!wireframe)}

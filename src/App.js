@@ -11,7 +11,7 @@ import Menu from "./Components/Menu/Menu";
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <div className="h-screen w-screen relative ">
+      <div className="h-screen w-screen relative">
         <Topbar />
         <Menu />
         <Routes>
