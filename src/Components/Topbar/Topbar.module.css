@@ -127,6 +127,18 @@
   );
 }
 
+.notch {
+  width: 96px;
+  height: 32px;
+  background-color: black;
+  z-index: 99;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+
+  border-radius: 0px 0px 50px 50px;
+}
+
 .bottombar::after {
   position: absolute;
   content: "";

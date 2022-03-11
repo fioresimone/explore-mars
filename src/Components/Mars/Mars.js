@@ -143,13 +143,12 @@ export default function Mars() {
         dispose={null}
         colorManagement={false}
       >
+        {/* <axesHelper scale={15} /> */}
+        {/* <ambientLight intensity={0.1} /> */}
         <Suspense fallback={null}>
           <ambientLight intensity={0.15} />
-          {/* <ambientLight intensity={0.1} /> */}
           <Sun />
           <Stats />
-
-          {/* <axesHelper scale={15} /> */}
 
           <OrbitControls
             minDistance={10}

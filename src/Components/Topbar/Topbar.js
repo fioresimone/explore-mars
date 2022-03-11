@@ -51,6 +51,7 @@ export default function Topbar() {
         <div className={classes.leftBlockBottom}>
           <div className={classes.leftBlockBottomShadow}></div>
         </div>
+        <div className={classes.notch}></div>
         <div className={classes.rightBlockBottom}>
           <div className={classes.rightBlockBottomShadow}></div>
         </div>
