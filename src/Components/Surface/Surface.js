@@ -129,7 +129,7 @@ export default function Surface() {
           {/* <axesHelper args={[15]} /> */}
           <Terrain wireframe={wireframe} />
           <Model />
-          <Stats />
+          {/* <Stats /> */}
           <Controls />
           <Lights />
         </Suspense>

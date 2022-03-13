@@ -42,20 +42,26 @@ export default function Topbar() {
           home
         </Link> */}
       </div>
-      <div
+
+      <div className="w-screen h-8 fixed -bottom-2 flex items-center z-50  justify-between ">
+        <div className={classes.bottombarLeft}></div>
+        <div className={classes.bottombarRight}></div>
+        <div className={classes.leftBlockBottom}>
+          <div className={classes.leftBlockBottomShadow}></div>
+        </div>
+        {/* <div className={classes.notch}></div> */}
+        <div className={classes.rightBlockBottom}>
+          <div className={classes.rightBlockBottomShadow}></div>
+        </div>
+      </div>
+      {/* <div
         className={
           "w-screen h-8 fixed bottom-0 flex items-center z-50  justify-between  " +
           classes.bottombar
         }
       >
-        <div className={classes.leftBlockBottom}>
-          <div className={classes.leftBlockBottomShadow}></div>
-        </div>
-        <div className={classes.notch}></div>
-        <div className={classes.rightBlockBottom}>
-          <div className={classes.rightBlockBottomShadow}></div>
-        </div>
-      </div>{" "}
+        
+      </div>{" "} */}
     </>
   );
 }

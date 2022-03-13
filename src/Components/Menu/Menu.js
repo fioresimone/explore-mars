@@ -14,26 +14,26 @@ export default function Menu() {
 
         <div
           className={
-            "transition-all absolute bottom-8 bg-black md:border-red-500 md:border-2 md:border-b-0 h-12 width-menu md:h-12 tra 6 z-40 rounded-t-full flex justify-center items-end  " +
+            "transition-all absolute bottom-8   h-12 width-menu md:h-12 tra 6 z-40 rounded-t-full flex justify-center items-end  " +
             (open ? "opacity-100 " : "opacity-0 -")
           }
         >
           <Link
             to="/"
-            className="rounded-full bg-black    flex justify-center items-center w-8 h-8 absolute -translate-x-20 md:-translate-x-40"
+            className="rounded-full flex justify-center items-center w-8 h-8 absolute -translate-x-20 md:-translate-x-40"
           >
-            <i className="fal fa-user"></i>
+            <i className="fal fa-solar-system"></i>
           </Link>
           <Link
             to="/surface"
-            className="rounded-full bg-black    flex justify-center items-center w-8 h-8 absolute -translate-x-8 md:-translate-x-20"
+            className="rounded-full     flex justify-center items-center w-8 h-8 absolute -translate-x-8 md:-translate-x-20"
           >
-            <i className="fal fa-user"></i>
+            <i className="fal fa-location"></i>
           </Link>
-          <button className="rounded-full bg-black    flex justify-center items-center w-8 h-8 absolute translate-x-20 md:translate-x-40">
+          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-20 md:translate-x-40">
             <i className="fal fa-users"></i>
           </button>
-          <button className="rounded-full bg-black    flex justify-center items-center w-8 h-8 absolute translate-x-8 md:translate-x-20">
+          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-8 md:translate-x-20">
             <i className="fal fa-users"></i>
           </button>
         </div>

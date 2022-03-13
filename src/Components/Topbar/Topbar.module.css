@@ -1,15 +1,15 @@
 :root {
   --main: transparent;
-  --main-tr: #c5393599;
+  --main-tr: #75221f;
   --border: red;
 }
 
 .topbar {
   background: linear-gradient(
     to right,
-    var(--main) 10%,
+    var(--main-tr) 10%,
     var(--main-tr),
-    var(--main) 90%
+    var(--main-tr) 90%
   );
 }
 
@@ -23,8 +23,8 @@
   background: linear-gradient(
     90deg,
     transparent 77px,
-    var(--border) 77px,
-    var(--border) calc(100% - 77px),
+    white 77px,
+    white calc(100% - 77px),
     transparent calc(100% - 77px)
   );
 }
@@ -35,7 +35,7 @@
   left: 0px;
   width: 60px;
   height: 36px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   border-bottom: 2px solid white;
   z-index: -1;
 }
@@ -69,7 +69,7 @@
   width: 48px;
   z-index: 0;
   height: 13px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   transform: skew(-50deg);
 }
 
@@ -79,7 +79,7 @@
   right: 0px;
   width: 60px;
   height: 36px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   border-bottom: 2px solid white;
   z-index: -1;
 }
@@ -114,32 +114,126 @@
   width: 48px;
   z-index: 0;
   height: 13px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   transform: skew(50deg);
 }
 
 .bottombar {
   background: linear-gradient(
     to right,
-    var(--main) 15%,
-    var(--main-tr),
-    var(--main) 85%
+    var(--main-tr) 15%,
+    transparent 35%,
+    transparent 65%,
+    var(--main-tr) 85%
   );
+}
+
+.bottombarLeft {
+  position: absolute;
+  width: 50%;
+  left: 0px;
+
+  height: 100%;
+  background: linear-gradient(
+    -120deg,
+    transparent 60px,
+    transparent 60px,
+    transparent 62px,
+    var(--main-tr) 60px
+  );
+}
+
+.bottombarLeft::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  z-index: 99;
+  right: 72px;
+  height: 1px;
+  width: calc(100% - 144px);
+  background-color: white;
+  /* box-shadow: 0px 0px 4px 1px rgb(255 255 255); */
+}
+.bottombarLeft::before {
+  position: absolute;
+  content: "";
+  right: 60px;
+  height: 100%;
+  width: 3px;
+  transform: skew(30deg);
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
+}
+
+.bottombarRight {
+  position: absolute;
+  width: 50%;
+  right: 0px;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 60px,
+    transparent 60px,
+    transparent 62px,
+    var(--main-tr) 60px
+  );
+}
+
+.bottombarRight::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  z-index: 99;
+  left: 72px;
+  height: 1px;
+  width: calc(100% - 144px);
+  background-color: white;
+  /* box-shadow: 0px 0px 4px 1px rgb(255 255 255); */
+}
+.bottombarRight::before {
+  position: absolute;
+  content: "";
+  left: 60px;
+  height: 100%;
+  width: 3px;
+  transform: skew(-30deg);
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
 }
 
 .notch {
   width: 96px;
   height: 32px;
-  background-color: black;
-  z-index: 99;
-  border-left: 2px solid white;
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
 
-  border-radius: 0px 0px 50px 50px;
+  position: relative;
+  z-index: 99;
+}
+/* 
+.notch::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  left: -20px;
+  background-color: #fff;
+  background-color: rgb(255, 255, 255);
+  transform: skew(50deg);
+  box-shadow: 0px 1px 4px 1px rgb(255, 255, 255);
 }
 
-.bottombar::after {
+.notch::after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  right: -20px;
+  background-color: #fff;
+  background-color: rgb(255, 255, 255);
+  transform: skew(-50deg);
+  box-shadow: 0px 1px 4px 1px rgb(255, 255, 255);
+} */
+
+/* .bottombar::after {
   position: absolute;
   content: "";
   top: -0px;
@@ -150,10 +244,12 @@
     90deg,
     transparent 77px,
     var(--border) 77px,
+    transparent 20%,
+    transparent 80%,
     var(--border) calc(100% - 77px),
     transparent calc(100% - 77px)
   );
-}
+} */
 
 .leftBlockBottom {
   position: relative;
@@ -161,7 +257,7 @@
   left: 0px;
   width: 60px;
   height: 36px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   border-top: 2px solid white;
   z-index: 99;
 }
@@ -169,6 +265,8 @@
 .leftBlockBottomShadow {
   position: absolute;
   top: -2px;
+  z-index: 999;
+
   width: 95%;
   height: 1px;
   box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
@@ -195,7 +293,7 @@
   width: 48px;
   z-index: 99;
   height: 13px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   transform: skew(50deg);
 }
 
@@ -205,7 +303,7 @@
   right: 0px;
   width: 60px;
   height: 36px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   border-top: 2px solid white;
   z-index: 99;
 }
@@ -214,6 +312,7 @@
   position: absolute;
   top: -2px;
   right: 0px;
+  z-index: 999;
   width: 95%;
   height: 1px;
   box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
@@ -240,6 +339,6 @@
   width: 48px;
   z-index: 999;
   height: 13px;
-  background-color: var(--main);
+  background-color: var(--main-tr);
   transform: skew(-50deg);
 }
