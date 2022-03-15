@@ -45,7 +45,8 @@ function Terrain({ wireframe }) {
       >
         <meshStandardMaterial
           attach="material"
-          color="#c53934"
+          /* color="#c53934" */
+          color="#C1440E"
           wireframe={wireframe}
           map={color}
           displacementMap={height}

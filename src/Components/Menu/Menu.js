@@ -6,16 +6,17 @@ export default function Menu() {
 
   return (
     <>
-      <div className="fixed bottom-0 w-screen z-50 flex justify-center">
-        <i
-          className="fal fa-plus shadow-custom cursor-pointer  relative bottom-2 z-50"
-          onClick={() => setOpen(!open)}
-        ></i>
+      <div
+        className="fixed bottom-0 w-screen z-50 flex justify-center"
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+      >
+        <i className="fal fa-plus shadow-custom cursor-pointer  relative bottom-2 z-50"></i>
 
         <div
           className={
             "transition-all absolute bottom-8   h-12 width-menu md:h-12 tra 6 z-40 rounded-t-full flex justify-center items-end  " +
-            (open ? "opacity-100 " : "opacity-0 -")
+            (open ? "opacity-100 " : "opacity-0")
           }
         >
           <Link
