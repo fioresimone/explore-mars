@@ -43,7 +43,7 @@ export default function Topbar() {
         </Link> */}
       </div>
 
-      <div className="w-screen h-8 fixed -bottom-2 flex items-center z-50  justify-between ">
+      <div className="w-screen h-8 fixed -bottom-4 flex items-center z-50  justify-between ">
         <div className={classes.bottombarLeft}></div>
         <div className={classes.bottombarRight}></div>
         <div className={classes.leftBlockBottom}>

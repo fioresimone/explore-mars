@@ -23,20 +23,20 @@ export default function Menu() {
         >
           <Link
             to="/"
-            className="rounded-full flex justify-center items-center w-8 h-8 absolute -translate-x-20 md:-translate-x-40"
+            className="rounded-full flex justify-center items-center w-8 h-8 absolute -translate-x-28 md:-translate-x-40"
           >
             <i className="fal fa-solar-system"></i>
           </Link>
           <Link
             to="/surface"
-            className="rounded-full     flex justify-center items-center w-8 h-8 absolute -translate-x-8 md:-translate-x-20"
+            className="rounded-full     flex justify-center items-center w-8 h-8 absolute -translate-x-16 md:-translate-x-20"
           >
             <i className="fal fa-location"></i>
           </Link>
-          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-20 md:translate-x-40">
+          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-28 md:translate-x-40">
             <i className="fal fa-users"></i>
           </button>
-          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-8 md:translate-x-20">
+          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-16 md:translate-x-20">
             <i className="fal fa-users"></i>
           </button>
         </div>
