@@ -7,37 +7,37 @@ export default function Menu() {
   return (
     <>
       <div
-        className="fixed bottom-0 w-screen z-50 flex justify-center"
+        className="fixed bottom-4  w-screen z-50 flex justify-center items-center"
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
-        <div className="button-circle w-12 h-12 relative bottom-2 z-50">
+        <div className="button-circle w-10 h-10 relative  z-50">
           <i className="fal fa-plus shadow-custom cursor-pointer"></i>
         </div>
 
         <div
           className={
-            "transition-all absolute bottom-8   h-12 width-menu md:h-12 tra 6 z-40 rounded-t-full flex justify-center items-end  " +
+            "transition-all absolute   w-1/2 h-8  z-40 flex justify-center items-end  " +
             (open ? "opacity-100 " : "opacity-0")
           }
         >
           <Link
             to="/"
-            className="rounded-full flex justify-center items-center w-8 h-8 absolute -translate-x-28 md:-translate-x-40"
+            className="w-8 h-8 absolute -translate-x-28 md:-translate-x-40 button-circle"
           >
             <i className="fal fa-solar-system"></i>
           </Link>
           <Link
             to="/surface"
-            className="rounded-full     flex justify-center items-center w-8 h-8 absolute -translate-x-16 md:-translate-x-20"
+            className="w-8 h-8 absolute -translate-x-16 md:-translate-x-20 button-circle"
           >
             <i className="fal fa-location"></i>
           </Link>
-          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-28 md:translate-x-40">
-            <i className="fal fa-users"></i>
+          <button className="w-8 h-8 absolute translate-x-28 md:translate-x-40 button-circle">
+            <i className="fal fa-solar-system"></i>
           </button>
-          <button className="rounded-full     flex justify-center items-center w-8 h-8 absolute translate-x-16 md:translate-x-20">
-            <i className="fal fa-users"></i>
+          <button className="w-8 h-8 absolute translate-x-16 md:translate-x-20 button-circle">
+            <i className="fal fa-solar-system"></i>
           </button>
         </div>
       </div>

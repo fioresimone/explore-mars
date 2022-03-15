@@ -7,6 +7,7 @@ import Surface from "./Components/Surface/Surface";
 
 import Mars from "./Components/Mars/Mars";
 import Menu from "./Components/Menu/Menu";
+import Bottombar from "./Components/Bottombar/Bottombar";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <div className="h-screen w-screen relative">
         <Topbar />
         <Menu />
+        <Bottombar />
         <Routes>
           <Route path="/" element={<Mars />} />
           <Route path="/station" element={<Station />} />
