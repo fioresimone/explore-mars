@@ -11,7 +11,9 @@ export default function Menu() {
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
-        <i className="fal fa-plus shadow-custom cursor-pointer  relative bottom-2 z-50"></i>
+        <div className="button-circle w-12 h-12 relative bottom-2 z-50">
+          <i className="fal fa-plus shadow-custom cursor-pointer"></i>
+        </div>
 
         <div
           className={

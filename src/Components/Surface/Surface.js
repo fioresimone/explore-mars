@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Suspense } from "react";
 import Controls from "./Controls";
+
 import Lights from "./Lights";
 import {
   OrbitControls,
@@ -16,6 +17,7 @@ import {
   Stats,
   Billboard,
   Text,
+  MapControls,
 } from "@react-three/drei";
 import { Camera, TextureLoader } from "three";
 
@@ -27,7 +29,7 @@ import Model from "./Model";
 
 import gsap from "gsap";
 
-function Terrain({ wireframe }) {
+function Terrain({ wireframe, range }) {
   const [height, opacity, color] = useLoader(TextureLoader, [
     elev,
     alpha,
@@ -41,7 +43,7 @@ function Terrain({ wireframe }) {
       <Plane
         rotation={[-Math.PI / 2, 0, 0]}
         position={[0, 0, 0]}
-        args={[120, 120, 120, 120]}
+        args={[120, 120, range, range]}
       >
         <meshStandardMaterial
           attach="material"
@@ -107,16 +109,23 @@ function Marker({ coords }) {
 
 export default function Surface() {
   const [wireframe, setWireframe] = useState(false);
-
+  const [range, setRange] = useState(60);
   return (
     <>
-      <div className="absolute bottom-20 left-4 h-10 z-40">
+      <div className="absolute top-20 left-4 h-10 z-40">
         <div
-          className="card-border flex px-2 items-center w-full h-8 md:h-10 text-xs mb-2 text-white"
+          className="button-circle w-12 h-12 cursor-pointer"
           onClick={() => setWireframe(!wireframe)}
         >
-          Toggle grid
+          <i className="fal fa-game-board fa-xs"></i>
         </div>
+        <input
+          type="range"
+          min={10}
+          max={120}
+          value={range}
+          onChange={(e) => setRange(e.target.value)}
+        />
       </div>
       <Canvas
         style={{ height: "100vh", width: "100vw", position: "relative" }}
@@ -128,9 +137,10 @@ export default function Surface() {
       >
         <Suspense fallback={null}>
           {/* <axesHelper args={[15]} /> */}
-          <Terrain wireframe={wireframe} />
+          <Terrain wireframe={wireframe} range={range} />
           <Model />
-          {/* <Stats /> */}
+          <Stats />
+          {/* <MapControls /> */}
           <Controls />
           <Lights />
         </Suspense>

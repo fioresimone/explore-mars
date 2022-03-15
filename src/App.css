@@ -72,3 +72,12 @@ body {
     width: 24rem;
   }
 }
+
+.button-circle {
+  background: url("./Assets/circle-1.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

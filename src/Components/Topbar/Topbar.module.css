@@ -1,6 +1,7 @@
 :root {
   --main: transparent;
   --main-tr: #75221f;
+  /*  --main-tr: rgb(212, 48, 0); */
   --border: red;
 }
 
