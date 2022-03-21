@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkexplore_mars=self.webpackChunkexplore_mars||[]).push([[9],{2009:function(e,n,r){r.r(n),r.d(n,{default:function(){return i}});var s=r(8520),t=r(2312),c=r(343),a=r(184);function i(){var e=(0,s.U2)(t.E,c);return console.log(e),(0,a.jsx)(a.Fragment,{children:(0,a.jsx)("primitive",{object:e.scene,scale:[.1,.1,.1]})})}},343:function(e,n,r){e.exports=r.p+"static/media/iss.b375df467a38c492e54b.glb"}}]);
+//# sourceMappingURL=9.c2daeed7.chunk.js.map

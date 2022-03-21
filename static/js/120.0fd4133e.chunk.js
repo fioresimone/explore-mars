@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkexplore_mars=self.webpackChunkexplore_mars||[]).push([[120],{7120:function(e,n,s){s.r(n);var t=s(8520),i=s(2791),r=s(2312),o=s(184);function c(){var e=(0,t.U2)(r.E,"".concat("/explore-mars","/sputnik/scene.gltf"));return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)("pointLight",{position:[-8,0,0],intensity:100}),(0,o.jsx)("primitive",{object:e.scene,position:[2.3,-3.5,1.1]})]})}n.default=i.memo(c)}}]);
+//# sourceMappingURL=120.0fd4133e.chunk.js.map

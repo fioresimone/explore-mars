@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkexplore_mars=self.webpackChunkexplore_mars||[]).push([[442],{2442:function(e,r,t){t.r(r),t.d(r,{default:function(){return i}});t(2791);var n=t(8520),c=t(2312),s=t(4545),a=t(184);function i(e){var r=(0,n.U2)(c.E,s);return(0,a.jsx)(a.Fragment,{children:(0,a.jsx)("primitive",{object:r.scene,scale:[1,1,1],rotation:[0,0,1.1]})})}},4545:function(e,r,t){e.exports=t.p+"static/media/SPITZER.428899206e26582c33de.glb"}}]);
+//# sourceMappingURL=442.46582a08.chunk.js.map
