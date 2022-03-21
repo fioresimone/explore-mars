@@ -35,7 +35,7 @@ export default function Menu() {
           </Link>
 
           <Link
-            to="/spacecrafts/voyager"
+            to="/spacecrafts/mer"
             className="w-8 h-8 absolute translate-x-28 md:translate-x-40 button-circle"
           >
             <i className="fal fa-solar-system"></i>

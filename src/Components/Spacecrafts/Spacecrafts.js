@@ -42,7 +42,7 @@ export default function Spacecrafts() {
             color="darkorange"
             alphaMap={opacityMap}
             displacementMap={displacementMap}
-            displacementScale={0.1}
+            displacementScale={0.3}
             bumpMap={normalMap}
             transparent
           />
