@@ -33,9 +33,13 @@ export default function Menu() {
           >
             <i className="fal fa-location"></i>
           </Link>
-          <button className="w-8 h-8 absolute translate-x-28 md:translate-x-40 button-circle">
+
+          <Link
+            to="/spacecrafts/voyager"
+            className="w-8 h-8 absolute translate-x-28 md:translate-x-40 button-circle"
+          >
             <i className="fal fa-solar-system"></i>
-          </button>
+          </Link>
           <button className="w-8 h-8 absolute translate-x-16 md:translate-x-20 button-circle">
             <i className="fal fa-solar-system"></i>
           </button>
