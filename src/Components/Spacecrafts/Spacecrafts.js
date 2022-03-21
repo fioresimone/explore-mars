@@ -1,10 +1,16 @@
 import React, { useRef, useState, Suspense, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls, Stars, Plane, Stage } from "@react-three/drei";
 import { Stats } from "@react-three/drei/core/Stats";
+import { Camera, TextureLoader } from "three";
 
 import { Link, useParams } from "react-router-dom";
 import { data } from "./spacecrafts-data";
+
+import color from "./ground/trestraou2_Base_Color.jpg";
+import displacement from "./ground/trestraou2_Displacement.jpg";
+import normal from "./ground/trestraou2_Normal.jpg";
+import opacity from "./ground/opacity.png";
 
 export default function Spacecrafts() {
   const { modelName } = useParams();
@@ -17,24 +23,36 @@ export default function Spacecrafts() {
     setModel(data.filter((el) => el.name === modelName)[0]);
   }, [modelName]);
 
-  function Sun() {
-    const ref = useRef();
-    useFrame((state, delta) => {
-      const elapsed = state.clock.elapsedTime / 2;
-      ref.current.position.x = 15 * Math.cos(elapsed);
-      ref.current.position.z = 15 * Math.sin(elapsed);
-      //ref.current.position.y = 5;
-    });
+  function Terrain() {
+    const [colorMap, displacementMap, opacityMap, normalMap] = useLoader(
+      TextureLoader,
+      [color, displacement, opacity, normal],
+    );
+
     return (
       <>
-        <pointLight ref={ref} />
+        <Plane
+          rotation={[-Math.PI / 2, 0, 0]}
+          position={[0, 0, 0]}
+          args={[24, 24, 60, 60]}
+        >
+          <meshStandardMaterial
+            attach="material"
+            map={colorMap}
+            color="darkorange"
+            alphaMap={opacityMap}
+            displacementMap={displacementMap}
+            displacementScale={0.1}
+            bumpMap={normalMap}
+            transparent
+          />
+        </Plane>
       </>
     );
   }
-
   return (
     <>
-      <div className="fixed top-20 h-28 overflow-y-scroll md:h-auto md:top-24 left-0 md:left-4 w-full md:w-32  z-40 flex flex-wrap justify-center md:block  text-white ">
+      {/* <div className="fixed top-20 h-28 overflow-y-scroll md:h-auto md:top-24 left-0 md:left-4 w-full md:w-32  z-40 flex flex-wrap justify-center md:block  text-white ">
         {data &&
           data.map((el) => (
             <Link
@@ -45,7 +63,7 @@ export default function Spacecrafts() {
               <div>{el.displayName}</div>
             </Link>
           ))}
-      </div>
+      </div> */}
 
       {model && (
         <>
@@ -82,23 +100,26 @@ export default function Spacecrafts() {
 
       <Canvas
         style={{ height: "100vh", width: "100vw", position: "relative" }}
-        className="bg-grid"
         dpr={2}
         gl={{ antialias: true, alpha: true }}
-        camera={{ fov: 55, position: [-10, 24, 20] }}
+        camera={{ fov: 55, position: [-5, 10, 10] }}
       >
         <Stats />
-        {/* <Stars /> */}
-        {/* <Skybox /> */}
+
         <Suspense fallback={null}>
-          <ambientLight intensity={1} />
-
-          {/* <axesHelper scale={15} /> */}
-
-          <Sun />
-
-          <Model />
-
+          <Stage
+            contactShadow
+            shadows
+            adjustCamera
+            intensity={1}
+            environment="city"
+          >
+            <Model />
+            <Terrain />
+          </Stage>
+          {/* <ambientLight intensity={11} color={"green"} /> */}
+          {/* <Model />
+           */}
           <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
         </Suspense>
       </Canvas>
