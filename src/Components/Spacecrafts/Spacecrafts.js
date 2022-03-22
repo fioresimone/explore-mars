@@ -41,8 +41,8 @@ export default function Spacecrafts() {
             map={colorMap}
             color="darkorange"
             alphaMap={opacityMap}
-            displacementMap={displacementMap}
-            displacementScale={0.3}
+            /* displacementMap={displacementMap} */
+            /* displacementScale={0.3} */
             transparent
           />
         </Plane>
