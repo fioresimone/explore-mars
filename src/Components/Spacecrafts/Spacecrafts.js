@@ -1,6 +1,6 @@
 import React, { useRef, useState, Suspense, useEffect } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Stars, Plane, Stage, Sky } from "@react-three/drei";
+import { OrbitControls, Stars, Plane, Stage, Loader } from "@react-three/drei";
 import { Stats } from "@react-three/drei/core/Stats";
 import { Camera, TextureLoader } from "three";
 
@@ -106,7 +106,7 @@ export default function Spacecrafts() {
         <Stats />
 
         <Suspense fallback={null}>
-          <Stage adjustCamera intensity={1} environment="city">
+          <Stage adjustCamera intensity={1} environment="sunset">
             <Model />
             <Terrain />
           </Stage>
@@ -116,11 +116,11 @@ export default function Spacecrafts() {
           <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
         </Suspense>
       </Canvas>
-      {/* <Loader
+      <Loader
         dataInterpolation={(p) =>
           `Loading ${p.toFixed(2)}% \n \n Drag to explore`
         } // Text
-      /> */}
+      />
     </>
   );
 }
