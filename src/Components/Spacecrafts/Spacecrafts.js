@@ -34,7 +34,7 @@ export default function Spacecrafts() {
         <Plane
           rotation={[-Math.PI / 2, 0, 0]}
           position={[0, 0, 0]}
-          args={[24, 24, 60, 60]}
+          args={[16, 16, 60, 60]}
         >
           <meshStandardMaterial
             attach="material"
@@ -101,7 +101,7 @@ export default function Spacecrafts() {
         style={{ height: "100vh", width: "100vw", position: "relative" }}
         dpr={2}
         gl={{ antialias: true, alpha: true }}
-        camera={{ fov: 55, position: [-5, 10, 10] }}
+        camera={{ fov: 55, position: [-5, 5, 5] }}
       >
         <Stats />
 
