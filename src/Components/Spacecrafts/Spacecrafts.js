@@ -1,6 +1,6 @@
 import React, { useRef, useState, Suspense, useEffect } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Stars, Plane, Stage } from "@react-three/drei";
+import { OrbitControls, Stars, Plane, Stage, Sky } from "@react-three/drei";
 import { Stats } from "@react-three/drei/core/Stats";
 import { Camera, TextureLoader } from "three";
 
@@ -106,18 +106,11 @@ export default function Spacecrafts() {
         <Stats />
 
         <Suspense fallback={null}>
-          <Model />
-          <Terrain />
-          {/* <Stage adjustCamera intensity={1} environment="city">
-          </Stage> */}
-          {/* <ambientLight intensity={10} /> */}
-          {/* <hemisphereLight
-            intensity={15}
-            color={"red"}
-            position={[0, -1110, 0]}
-          /> */}
-          <ambientLight intensity={10} />
-          <rectAreaLight color={"green"} intensity={5} width={20} />
+          <Stage adjustCamera intensity={1} environment="city">
+            <Model />
+            <Terrain />
+          </Stage>
+
           {/* <Model />
            */}
           <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
