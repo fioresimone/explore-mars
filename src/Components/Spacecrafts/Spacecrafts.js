@@ -111,7 +111,13 @@ export default function Spacecrafts() {
           {/* <Stage adjustCamera intensity={1} environment="city">
           </Stage> */}
           {/* <ambientLight intensity={10} /> */}
-          <emisphereLight intensity={5} color={"green"} />
+          {/* <hemisphereLight
+            intensity={15}
+            color={"red"}
+            position={[0, -1110, 0]}
+          /> */}
+          <ambientLight intensity={10} />
+          <rectAreaLight color={"green"} intensity={5} width={20} />
           {/* <Model />
            */}
           <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
