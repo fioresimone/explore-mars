@@ -43,7 +43,6 @@ export default function Spacecrafts() {
             alphaMap={opacityMap}
             displacementMap={displacementMap}
             displacementScale={0.3}
-            bumpMap={normalMap}
             transparent
           />
         </Plane>
@@ -107,17 +106,12 @@ export default function Spacecrafts() {
         <Stats />
 
         <Suspense fallback={null}>
-          <Stage
-            contactShadow
-            shadows
-            adjustCamera
-            intensity={1}
-            environment="city"
-          >
-            <Model />
-            <Terrain />
-          </Stage>
-          {/* <ambientLight intensity={11} color={"green"} /> */}
+          <Model />
+          <Terrain />
+          {/* <Stage adjustCamera intensity={1} environment="city">
+          </Stage> */}
+          {/* <ambientLight intensity={10} /> */}
+          <emisphereLight intensity={5} color={"green"} />
           {/* <Model />
            */}
           <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
