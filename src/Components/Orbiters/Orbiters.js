@@ -1,21 +1,40 @@
 import React, { useRef, useState, Suspense, useEffect } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Stars, Plane, Stage, Loader } from "@react-three/drei";
+import {
+  OrbitControls,
+  Stars,
+  Plane,
+  Stage,
+  Loader,
+  useGLTF,
+} from "@react-three/drei";
 import { Stats } from "@react-three/drei/core/Stats";
 import { Camera, TextureLoader } from "three";
 
 import { Link, useParams } from "react-router-dom";
+
+import { GLTFLoader } from "three-stdlib";
 
 export default function Orbiters() {
   const { modelName } = useParams();
 
   const [model, setModel] = useState();
 
-  const Model = React.lazy(() => import(`./${modelName}/${modelName}.js`));
+  /*   const Model = React.lazy(() =>
+    import(`process.env.PUBLIC_URL/${modelName}.js`),
+  ); */
 
-  /*   useEffect(() => {
-    setModel(data.filter((el) => el.name === modelName)[0]);
-  }, [modelName]); */
+  function Scene() {
+    const { dd } = useGLTF(`${process.env.PUBLIC_URL}/${modelName}.glb`);
+
+    console.log(dd);
+    const gltf = useLoader(
+      GLTFLoader,
+      `${process.env.PUBLIC_URL}/${modelName}.glb`,
+    );
+
+    return <primitive object={gltf.scene} />;
+  }
 
   return (
     <>
@@ -79,11 +98,13 @@ export default function Orbiters() {
         <Stats />
 
         <Suspense fallback={null}>
-          <Model />
+          {/* <Model /> */}
+          <Scene />
 
           <spotLight position={[0, 5, 0]} intensity={4} color={"lightblue"} />
-          {/* <pointLight position={[0, -5, 0]} intensity={1} color={"lightblue"} /> */}
-          {/* <pointLight position={[10, 10, 0]} intensity={4} /> */}
+
+          <pointLight position={[10, 10, 0]} intensity={4} />
+          <pointLight position={[0, -5, 0]} intensity={1} color={"lightblue"} />
 
           <OrbitControls
             minDistance={3}
