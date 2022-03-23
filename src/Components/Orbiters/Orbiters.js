@@ -14,6 +14,7 @@ import { Camera, TextureLoader } from "three";
 import { Link, useParams } from "react-router-dom";
 
 import { GLTFLoader } from "three-stdlib";
+import Loading from "./../Loading/Loading";
 
 export default function Orbiters() {
   const { modelName } = useParams();
@@ -97,7 +98,7 @@ export default function Orbiters() {
       >
         <Stats />
 
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           {/* <Model /> */}
           <Scene />
 
@@ -115,11 +116,11 @@ export default function Orbiters() {
           />
         </Suspense>
       </Canvas>
-      <Loader
+      {/* <Loader
         dataInterpolation={(p) =>
           `Loading ${p.toFixed(2)}% \n \n Drag to explore`
         } // Text
-      />
+      /> */}
     </>
   );
 }
