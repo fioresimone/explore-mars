@@ -35,7 +35,7 @@ export default function Spacecrafts() {
           rotation={[-Math.PI / 2, 0, 0]}
           position={[0, 0, 0]}
           args={[16, 16, 60, 60]}
-          /* receiveShadow={false} */
+          receiveShadow
         >
           <meshStandardMaterial
             attach="material"
@@ -54,6 +54,7 @@ export default function Spacecrafts() {
         <Link to="/spacecrafts/mer">mer</Link>
         <br />
         <Link to="/spacecrafts/curiosity">asd</Link>
+        <Link to="/spacecrafts/insight">insight</Link>
         {/* {data &&
           data.map((el) => (
             <Link
@@ -111,15 +112,20 @@ export default function Spacecrafts() {
           {/* <Stage adjustCamera intensity={1} environment="sunset"></Stage> */}
           <Model />
           <Terrain />
-          <spotLight position={[0, 5, 0]} intensity={4} color={"lightblue"} />
-          <pointLight position={[10, 10, 0]} intensity={4} />
+          <spotLight
+            position={[0, 5, 0]}
+            intensity={4}
+            color={"lightblue"}
+            castShadow
+          />
+          <pointLight position={[10, 10, 0]} intensity={4} castShadow />
           {/* <ambientLight intensity={10} color={"darkorange"} /> */}
           <OrbitControls
             minDistance={3}
             maxDistance={25}
             enablePan={false}
-            minPolarAngle={Math.PI / 24}
-            maxPolarAngle={Math.PI / 3}
+            /* minPolarAngle={Math.PI / 24}
+            maxPolarAngle={Math.PI / 3} */
           />
         </Suspense>
       </Canvas>

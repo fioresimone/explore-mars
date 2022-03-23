@@ -10,6 +10,7 @@ import Menu from "./Components/Menu/Menu";
 import Bottombar from "./Components/Bottombar/Bottombar";
 
 import Spacecrafts from "./Components/Spacecrafts/Spacecrafts";
+import Orbiters from "./Components/Orbiters/Orbiters";
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/station" element={<Station />} />
           <Route path="/surface" element={<Surface />} />
           <Route path="/spacecrafts/:modelName" element={<Spacecrafts />} />
+          <Route path="/orbiters/:modelName" element={<Orbiters />} />
         </Routes>
       </div>
     </BrowserRouter>

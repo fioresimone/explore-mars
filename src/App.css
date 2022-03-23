@@ -81,3 +81,25 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* .bg-mars {
+  background: url("./Assets/mars.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 400px;
+} */
+
+.bg-mars {
+  background: url("./Assets/mars1.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .bg-mars {
+    background: url("./Assets/mars1.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+}
