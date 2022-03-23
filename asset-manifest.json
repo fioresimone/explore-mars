@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/explore-mars/static/css/main.0f0fc109.css",
-    "main.js": "/explore-mars/static/js/main.879abf37.js",
+    "main.css": "/explore-mars/static/css/main.a7a917c2.css",
+    "main.js": "/explore-mars/static/js/main.00be38c5.js",
     "static/js/97.86a6bb75.chunk.js": "/explore-mars/static/js/97.86a6bb75.chunk.js",
     "static/js/755.3d33f05a.chunk.js": "/explore-mars/static/js/755.3d33f05a.chunk.js",
     "static/js/672.61fa299f.chunk.js": "/explore-mars/static/js/672.61fa299f.chunk.js",
@@ -13,7 +13,6 @@
     "static/js/442.46582a08.chunk.js": "/explore-mars/static/js/442.46582a08.chunk.js",
     "static/js/120.0fd4133e.chunk.js": "/explore-mars/static/js/120.0fd4133e.chunk.js",
     "static/js/315.c709443f.chunk.js": "/explore-mars/static/js/315.c709443f.chunk.js",
-    "static/js/52.f825efe1.chunk.js": "/explore-mars/static/js/52.f825efe1.chunk.js",
     "static/js/787.c9859983.chunk.js": "/explore-mars/static/js/787.c9859983.chunk.js",
     "static/media/iss.glb": "/explore-mars/static/media/iss.b375df467a38c492e54b.glb",
     "static/media/insight.glb": "/explore-mars/static/media/insight.0e8350d1ac5e257f0a68.glb",
@@ -22,7 +21,6 @@
     "static/media/curiosity.glb": "/explore-mars/static/media/curiosity.4c02c9780c3cfbd38663.glb",
     "static/media/Hubble.glb": "/explore-mars/static/media/Hubble.743b9dac24a4bb9dca81.glb",
     "static/media/Juno.glb": "/explore-mars/static/media/Juno.3565e660edae3ed3a4b6.glb",
-    "static/media/maven.glb": "/explore-mars/static/media/maven.cfa16717d5f5ac773c79.glb",
     "static/media/PSP.glb": "/explore-mars/static/media/PSP.a5dff43b2c8c7eda1dc2.glb",
     "static/media/Cassini.glb": "/explore-mars/static/media/Cassini.ca96813c51ca0f86ac7e.glb",
     "static/media/SPITZER.glb": "/explore-mars/static/media/SPITZER.428899206e26582c33de.glb",
@@ -45,8 +43,8 @@
     "static/media/elevation.png": "/explore-mars/static/media/elevation.beacc54e6b0830c7b51f.png",
     "static/media/circle-1.png": "/explore-mars/static/media/circle-1.bdcdc55bd13889099eae.png",
     "index.html": "/explore-mars/index.html",
-    "main.0f0fc109.css.map": "/explore-mars/static/css/main.0f0fc109.css.map",
-    "main.879abf37.js.map": "/explore-mars/static/js/main.879abf37.js.map",
+    "main.a7a917c2.css.map": "/explore-mars/static/css/main.a7a917c2.css.map",
+    "main.00be38c5.js.map": "/explore-mars/static/js/main.00be38c5.js.map",
     "97.86a6bb75.chunk.js.map": "/explore-mars/static/js/97.86a6bb75.chunk.js.map",
     "755.3d33f05a.chunk.js.map": "/explore-mars/static/js/755.3d33f05a.chunk.js.map",
     "672.61fa299f.chunk.js.map": "/explore-mars/static/js/672.61fa299f.chunk.js.map",
@@ -58,11 +56,10 @@
     "442.46582a08.chunk.js.map": "/explore-mars/static/js/442.46582a08.chunk.js.map",
     "120.0fd4133e.chunk.js.map": "/explore-mars/static/js/120.0fd4133e.chunk.js.map",
     "315.c709443f.chunk.js.map": "/explore-mars/static/js/315.c709443f.chunk.js.map",
-    "52.f825efe1.chunk.js.map": "/explore-mars/static/js/52.f825efe1.chunk.js.map",
     "787.c9859983.chunk.js.map": "/explore-mars/static/js/787.c9859983.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f0fc109.css",
-    "static/js/main.879abf37.js"
+    "static/css/main.a7a917c2.css",
+    "static/js/main.00be38c5.js"
   ]
 }
