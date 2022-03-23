@@ -16,11 +16,12 @@ export default function Model(props) {
       {/* <pointLight position={[10, 10, 0]} intensity={4} />
       <ambientLight intensity={12} /> */}
 
-      {/* <directionalLight intensity={12} position={[0, 5, 0]} /> */}
-      {/* <pointLight position={[0, 5, 0]} intensity={4} /> */}
-      {/* <pointLight position={[0, 20, 0]} intensity={4} decay={2} /> */}
-      {/* <pointLight position={[5, 5, 0]} intensity={4} />
-      <pointLight position={[0, 5, 5]} intensity={4} /> */}
+      {/* <directionalLight intensity={12} position={[0, 5, 0]} />
+      <pointLight position={[0, 5, 0]} intensity={4} />
+      <pointLight position={[0, 20, 0]} intensity={4} decay={2} />
+      <pointLight position={[5, 5, 0]} intensity={4} />
+      <pointLight position={[0, 5, 5]} intensity={4} />
+       */}
       {/* <ambientLight intensity={5} /> */}
       <group ref={group} {...props} dispose={null}>
         <mesh

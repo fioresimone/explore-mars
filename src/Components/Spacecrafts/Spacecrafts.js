@@ -19,9 +19,9 @@ export default function Spacecrafts() {
 
   const Model = React.lazy(() => import(`./${modelName}/${modelName}.js`));
 
-  useEffect(() => {
+  /*   useEffect(() => {
     setModel(data.filter((el) => el.name === modelName)[0]);
-  }, [modelName]);
+  }, [modelName]); */
 
   function Terrain() {
     const [colorMap, displacementMap, opacityMap, normalMap] = useLoader(
@@ -35,14 +35,13 @@ export default function Spacecrafts() {
           rotation={[-Math.PI / 2, 0, 0]}
           position={[0, 0, 0]}
           args={[16, 16, 60, 60]}
+          /* receiveShadow={false} */
         >
           <meshStandardMaterial
             attach="material"
             map={colorMap}
             color="darkorange"
             alphaMap={opacityMap}
-            /* displacementMap={displacementMap} */
-            /* displacementScale={0.3} */
             transparent
           />
         </Plane>
@@ -51,8 +50,11 @@ export default function Spacecrafts() {
   }
   return (
     <>
-      {/* <div className="fixed top-20 h-28 overflow-y-scroll md:h-auto md:top-24 left-0 md:left-4 w-full md:w-32  z-40 flex flex-wrap justify-center md:block  text-white ">
-        {data &&
+      <div className="fixed top-20 h-28 overflow-y-scroll md:h-auto md:top-24 left-0 md:left-4 w-full md:w-32  z-40 flex flex-wrap justify-center md:block  text-white ">
+        <Link to="/spacecrafts/mer">mer</Link>
+        <br />
+        <Link to="/spacecrafts/curiosity">asd</Link>
+        {/* {data &&
           data.map((el) => (
             <Link
               key={el.name}
@@ -61,8 +63,8 @@ export default function Spacecrafts() {
             >
               <div>{el.displayName}</div>
             </Link>
-          ))}
-      </div> */}
+          ))} */}
+      </div>
 
       {model && (
         <>
@@ -106,14 +108,19 @@ export default function Spacecrafts() {
         <Stats />
 
         <Suspense fallback={null}>
-          <Stage adjustCamera intensity={1} environment="sunset">
-            <Model />
-            <Terrain />
-          </Stage>
-
-          {/* <Model />
-           */}
-          <OrbitControls minDistance={5} maxDistance={45} enablePan={false} />
+          {/* <Stage adjustCamera intensity={1} environment="sunset"></Stage> */}
+          <Model />
+          <Terrain />
+          <spotLight position={[0, 5, 0]} intensity={4} color={"lightblue"} />
+          <pointLight position={[10, 10, 0]} intensity={4} />
+          {/* <ambientLight intensity={10} color={"darkorange"} /> */}
+          <OrbitControls
+            minDistance={3}
+            maxDistance={25}
+            enablePan={false}
+            minPolarAngle={Math.PI / 24}
+            maxPolarAngle={Math.PI / 3}
+          />
         </Suspense>
       </Canvas>
       <Loader
