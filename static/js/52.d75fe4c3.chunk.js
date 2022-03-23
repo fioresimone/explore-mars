@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkexplore_mars=self.webpackChunkexplore_mars||[]).push([[52],{52:function(e,t,n){n.r(t),n.d(t,{default:function(){return s}});var r=n(8520),a=n(2312),c=n(1794),i=n(184);function s(){var e=(0,r.U2)(a.E,c);return(0,i.jsx)("primitive",{rotation:[0,2,1],object:e.scene})}},1794:function(e,t,n){e.exports=n.p+"static/media/maven.cfa16717d5f5ac773c79.glb"}}]);
+//# sourceMappingURL=52.d75fe4c3.chunk.js.map

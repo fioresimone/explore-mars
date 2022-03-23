@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkexplore_mars=self.webpackChunkexplore_mars||[]).push([[449],{9449:function(e,t,r){r.r(t),r.d(t,{default:function(){return s}});var n=r(8520),a=r(2312),c=r(4031),i=r(184);function s(){var e=(0,n.U2)(a.E,c);return(0,i.jsx)("primitive",{rotation:[0,2,1],object:e.scene})}},4031:function(e,t,r){e.exports=r.p+"static/media/TGO.bc1a1377257a9bf1128c.glb"}}]);
+//# sourceMappingURL=449.de1dcd62.chunk.js.map
