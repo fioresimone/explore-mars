@@ -35,14 +35,17 @@ export default function Menu() {
           </Link>
 
           <Link
+            to="/orbiters/maven"
+            className="w-8 h-8 absolute translate-x-16 md:translate-x-20 button-circle"
+          >
+            <i className="fal fa-solar-system"></i>
+          </Link>
+          <Link
             to="/spacecrafts/mer"
             className="w-8 h-8 absolute translate-x-28 md:translate-x-40 button-circle"
           >
             <i className="fal fa-solar-system"></i>
           </Link>
-          <button className="w-8 h-8 absolute translate-x-16 md:translate-x-20 button-circle">
-            <i className="fal fa-solar-system"></i>
-          </button>
         </div>
       </div>
     </>

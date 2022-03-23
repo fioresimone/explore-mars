@@ -79,17 +79,12 @@ export default function Orbiters() {
         <Stats />
 
         <Suspense fallback={null}>
-          {/* <Stage adjustCamera intensity={1} environment="sunset"></Stage> */}
           <Model />
 
-          <spotLight
-            position={[0, 5, 0]}
-            intensity={4}
-            color={"lightblue"}
-            castShadow
-          />
-          <pointLight position={[10, 10, 0]} intensity={4} castShadow />
-          {/* <ambientLight intensity={10} color={"darkorange"} /> */}
+          <spotLight position={[0, 5, 0]} intensity={4} color={"lightblue"} />
+          {/* <pointLight position={[0, -5, 0]} intensity={1} color={"lightblue"} /> */}
+          {/* <pointLight position={[10, 10, 0]} intensity={4} /> */}
+
           <OrbitControls
             minDistance={3}
             maxDistance={25}
