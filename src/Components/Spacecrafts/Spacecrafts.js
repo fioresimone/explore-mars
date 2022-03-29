@@ -1,35 +1,24 @@
-import React, { useRef, useState, Suspense, useEffect } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Stars, Plane, Stage, Loader } from "@react-three/drei";
+import React, { Suspense } from "react";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { OrbitControls, Plane } from "@react-three/drei";
 import { Stats } from "@react-three/drei/core/Stats";
-import { Camera, TextureLoader } from "three";
+import { TextureLoader } from "three";
 
 import { Link, useParams } from "react-router-dom";
 
 import { data } from "./spacecrafts-data";
 
 import color from "./ground/trestraou2_Base_Color.jpg";
-import displacement from "./ground/trestraou2_Displacement.jpg";
-import normal from "./ground/trestraou2_Normal.jpg";
 import opacity from "./ground/opacity.png";
 import Loading from "../Loading/Loading";
 
 export default function Spacecrafts() {
   const { modelName } = useParams();
 
-  const [model, setModel] = useState();
-
   const Model = React.lazy(() => import(`./${modelName}/${modelName}.js`));
 
-  /*   useEffect(() => {
-    setModel(data.filter((el) => el.name === modelName)[0]);
-  }, [modelName]); */
-
   function Terrain() {
-    const [colorMap, displacementMap, opacityMap, normalMap] = useLoader(
-      TextureLoader,
-      [color, displacement, opacity, normal],
-    );
+    const [colorMap, opacityMap] = useLoader(TextureLoader, [color, opacity]);
 
     return (
       <>
@@ -69,15 +58,18 @@ export default function Spacecrafts() {
           ))} */}
       </div>
 
-      {model && (
+      {false && (
         <>
           <div className="absolute bottom-4 left-0 z-40 w-full md:hidden">
             <div className="card-border text-white p-4 pt-0 h-48">
-              <p className=" py-2 bg-black border-b-2 border-cyan-700">
-                {model.displayName.toUpperCase()}
-              </p>
+              <p className=" py-2 bg-black border-b-2 border-cyan-700">name</p>
               <div className="h-32  overflow-y-scroll">
-                <p className="mt-10 text-sm">{model.description}</p>
+                <p className="mt-10 text-sm">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Labore, tenetur eum adipisci alias impedit obcaecati quo non
+                  dignissimos quod in assumenda similique amet dicta accusantium
+                  expedita nulla ex? Maxime, ipsam.
+                </p>
               </div>
             </div>
           </div>
@@ -85,9 +77,14 @@ export default function Spacecrafts() {
           <div className="absolute top-24 right-4 z-40 w-96 hidden md:block ">
             <div className="card-border text-white p-4 pt-0 h-48 overflow-y-scroll">
               <p className="sticky top-0 left-0 pl-0 py-2 bg-black border-b-2 border-cyan-700">
-                {model.displayName.toUpperCase()}
+                name
               </p>
-              <p className="mt-10 text-sm">{model.description}</p>
+              <p className="mt-10 text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                amet quas laborum suscipit aliquid, corporis pariatur, error
+                officiis mollitia sit minus, accusantium voluptas. Eum
+                doloremque necessitatibus fugiat cumque porro. Doloremque?
+              </p>
             </div>
           </div>
 
@@ -111,7 +108,6 @@ export default function Spacecrafts() {
         <Stats />
 
         <Suspense fallback={<Loading />}>
-          {/* <Stage adjustCamera intensity={1} environment="sunset"></Stage> */}
           <Terrain />
           <Model />
           <spotLight
@@ -121,7 +117,7 @@ export default function Spacecrafts() {
             castShadow
           />
           <pointLight position={[10, 10, 0]} intensity={4} castShadow />
-          {/* <ambientLight intensity={10} color={"darkorange"} /> */}
+
           <OrbitControls
             minDistance={3}
             maxDistance={25}

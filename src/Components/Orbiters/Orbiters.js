@@ -1,15 +1,7 @@
-import React, { useRef, useState, Suspense, useEffect } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Stars,
-  Plane,
-  Stage,
-  Loader,
-  useGLTF,
-} from "@react-three/drei";
+import React, { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import { Stats } from "@react-three/drei/core/Stats";
-import { Camera, TextureLoader } from "three";
 
 import { Link, useParams } from "react-router-dom";
 
