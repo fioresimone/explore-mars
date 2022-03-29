@@ -35,7 +35,7 @@ export default function Orbiters() {
       >
         <Stats />
 
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <Model />
 
           <spotLight position={[0, 5, 0]} intensity={4} color={"white"} />

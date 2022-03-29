@@ -5,12 +5,14 @@ import { Stats } from "@react-three/drei/core/Stats";
 import { Camera, TextureLoader } from "three";
 
 import { Link, useParams } from "react-router-dom";
+
 import { data } from "./spacecrafts-data";
 
 import color from "./ground/trestraou2_Base_Color.jpg";
 import displacement from "./ground/trestraou2_Displacement.jpg";
 import normal from "./ground/trestraou2_Normal.jpg";
 import opacity from "./ground/opacity.png";
+import Loading from "../Loading/Loading";
 
 export default function Spacecrafts() {
   const { modelName } = useParams();
@@ -108,10 +110,10 @@ export default function Spacecrafts() {
       >
         <Stats />
 
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           {/* <Stage adjustCamera intensity={1} environment="sunset"></Stage> */}
-          <Model />
           <Terrain />
+          <Model />
           <spotLight
             position={[0, 5, 0]}
             intensity={4}
@@ -129,11 +131,11 @@ export default function Spacecrafts() {
           />
         </Suspense>
       </Canvas>
-      <Loader
+      {/*       <Loader
         dataInterpolation={(p) =>
           `Loading ${p.toFixed(2)}% \n \n Drag to explore`
         } // Text
-      />
+      /> */}
     </>
   );
 }
