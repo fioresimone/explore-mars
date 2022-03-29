@@ -1,7 +1,7 @@
 import "./App.css";
 import Topbar from "./Components/Topbar/Topbar";
 import { BrowserRouter } from "react-router-dom";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Station from "./Components/Station/Station";
 import Surface from "./Components/Surface/Surface";
 
@@ -11,6 +11,9 @@ import Bottombar from "./Components/Bottombar/Bottombar";
 
 import Spacecrafts from "./Components/Spacecrafts/Spacecrafts";
 import Orbiters from "./Components/Orbiters/Orbiters";
+
+//const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -18,6 +21,7 @@ function App() {
         <Topbar />
         <Menu />
         <Bottombar />
+
         <Routes>
           <Route path="/" element={<Mars />} />
           <Route path="/station" element={<Station />} />

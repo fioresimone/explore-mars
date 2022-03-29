@@ -1,48 +1,22 @@
-import React, { useRef, useState, Suspense } from "react";
-import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import React, { useRef, Suspense } from "react";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
   OrbitControls,
   Loader,
-  Cone,
   useProgress,
   Html,
-  Plane,
-  Sphere,
-  Torus,
+  Stars,
 } from "@react-three/drei";
-import { TextureLoader, CubeTextureLoader } from "three";
+import { TextureLoader } from "three";
 import { Stats } from "@react-three/drei/core/Stats";
 
-import MoonColor from "./marsColor.jpg";
-import MoonNormal from "./marsNormal10.jpg";
-import MoonBump from "./marsBump10.jpg";
-/* import Opacity from "./../../Assets/opacity.png"; */
-import Opacity from "./../../Assets/elevation.png";
-import Overlay from "../Loader/Overlay";
+import MarsColor from "./marsColor.jpg";
+import MarsBump from "./marsBump10.jpg";
+import Loading from "../Loading/Loading";
 
 export default function Mars() {
-  function Moon() {
-    const [color, normal, bump, opacity] = useLoader(TextureLoader, [
-      MoonColor,
-      MoonNormal,
-      MoonBump,
-      Opacity,
-    ]);
-
-    /* const point = useRef();
-    useFrame((state, delta) => {
-      const elapsed = state.clock.elapsedTime;
-
-      point.current.position.x = Math.cos(elapsed) * 24;
-      point.current.position.z = Math.sin(elapsed) * 24;
-      point.current.position.y = Math.sin(elapsed) * 4;
-    }); */
-
-    /* const ref = useRef();
-    useFrame((state, delta) => {
-      const elapsed = state.clock.elapsedTime;
-      ref.current.position.z = Math.sin(elapsed / 2) * 6;
-    }); */
+  function Mars() {
+    const [color, bump] = useLoader(TextureLoader, [MarsColor, MarsBump]);
 
     return (
       <>
@@ -96,35 +70,11 @@ export default function Mars() {
       const elapsed = state.clock.elapsedTime / 2;
       ref.current.position.x = 20 * Math.cos(elapsed);
       ref.current.position.z = 20 * Math.sin(elapsed);
-
-      /* ref.current.position.x = 20;
-      ref.current.position.z = 20;
-      ref.current.position.y = -5; */
     });
     return (
       <>
         <spotLight ref={ref} intensity={1} />
       </>
-    );
-  }
-
-  function Load() {
-    const { active, progress, errors, item, loaded, total } = useProgress();
-    console.log(progress);
-    return (
-      <Html
-        style={{
-          background: "black",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        fullscreen
-      >
-        <div>
-          <Overlay progress={progress} />
-        </div>
-      </Html>
     );
   }
 
@@ -141,11 +91,11 @@ export default function Mars() {
       >
         {/* <axesHelper scale={15} /> */}
         {/* <ambientLight intensity={0.1} /> */}
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <ambientLight intensity={0.15} />
           <Sun />
           <Stats />
-
+          <Stars />
           <OrbitControls
             minDistance={10}
             maxDistance={120}
@@ -153,10 +103,10 @@ export default function Mars() {
             /* minPolarAngle={Math.PI / 2}
             maxPolarAngle={Math.PI / 2} */
           />
-          <Moon />
+          <Mars />
         </Suspense>
       </Canvas>
-      <Loader
+      {/* <Loader
         dataInterpolation={(p) => {
           return (
             `Loading ${p.toFixed(2)}% \n \n ` +
@@ -169,7 +119,7 @@ export default function Mars() {
               : "Locating Matt Damon")
           );
         }}
-      />
+      /> */}
     </>
   );
 }

@@ -6,7 +6,7 @@ import { TextureLoader } from "three";
 
 import { Link, useParams } from "react-router-dom";
 
-import { data } from "./spacecrafts-data";
+/* import { data } from "./spacecrafts-data"; */
 
 import color from "./ground/trestraou2_Base_Color.jpg";
 import opacity from "./ground/opacity.png";
