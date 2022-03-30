@@ -43,16 +43,16 @@ function Terrain({ wireframe, range }) {
       <Plane
         rotation={[-Math.PI / 2, 0, 0]}
         position={[0, 0, 0]}
-        args={[120, 120, range, range]}
+        args={[200, 200, 120, 120]}
       >
         <meshStandardMaterial
           attach="material"
           /* color="#c53934" */
           color="#C1440E"
-          wireframe={wireframe}
+          wireframe
           map={color}
           displacementMap={height}
-          displacementScale={10}
+          displacementScale={20}
           alphaMap={opacity}
           transparent
           depthWrite={false}
@@ -108,28 +108,11 @@ function Marker({ coords }) {
 }
 
 export default function Surface() {
-  const [wireframe, setWireframe] = useState(false);
-  const [range, setRange] = useState(60);
   return (
     <>
-      <div className="absolute top-20 left-4 h-10 z-40">
-        <div
-          className="button-circle w-12 h-12 cursor-pointer"
-          onClick={() => setWireframe(!wireframe)}
-        >
-          <i className="fal fa-game-board fa-xs"></i>
-        </div>
-        <input
-          type="range"
-          min={10}
-          max={120}
-          value={range}
-          onChange={(e) => setRange(e.target.value)}
-        />
-      </div>
       <Canvas
         style={{ height: "100vh", width: "100vw", position: "relative" }}
-        camera={{ fov: 55, position: [175, 50, 0] }}
+        camera={{ fov: 55, position: [125, 10, 0] }}
         linear
         colorManagement={true}
         pixelRatio={2}
@@ -137,7 +120,7 @@ export default function Surface() {
       >
         <Suspense fallback={null}>
           {/* <axesHelper args={[15]} /> */}
-          <Terrain wireframe={wireframe} range={range} />
+          <Terrain />
           <Model />
           <Stats />
           {/* <MapControls /> */}
